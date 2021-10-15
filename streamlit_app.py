@@ -24,7 +24,7 @@ st.dataframe(token_url_df)
 
 token = st.text_input('TOKEN', '')
 if token_url_df['Token'].isin([token]).any().any():
-    st.table(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])
+    st.write(list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0])
 else:
     st.write('Not a valid token')
 
