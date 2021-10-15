@@ -22,7 +22,7 @@ elif token_url_df['Token'].isin([token]).any().any():
 else:
     st.write('Not a valid token')
 
-
+st.info('Created at 🇱🇺 by Soumyabrata Ghosh')
 
 
             
