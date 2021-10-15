@@ -23,7 +23,7 @@ token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT
 st.dataframe(token_url_df)
 
 token = st.text_input('TOKEN', '')
-if token in url_dict:
+if token in token_url_df['Token']:
     st.write('TOKEN:', token_url_df.loc[token_url_df['Token']==token]['Invite Link'])
 else:
     st.write('Not a valid token')
