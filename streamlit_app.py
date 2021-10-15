@@ -16,7 +16,7 @@ token = st.text_input('TOKEN', '')
 if token == '':
     pass
 elif token_url_df['Token'].isin([token]).any().any():
-    st.write('Click on the servey link:')
+    st.write('Go to your servey:')
     st.write(list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0])
 else:
     st.write('Not a valid token')
