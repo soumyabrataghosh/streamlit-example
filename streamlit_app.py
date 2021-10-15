@@ -13,7 +13,10 @@ import streamlit as st
 token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT51_uvt-sBRfDBdrWJCiCTspKxEtZTihm3RPb1YqtErzjSHbd1Sz0UZChsefSW1lD-z4Q66M4275/pub?output=csv')
 
 token = st.text_input('TOKEN', '')
-if token_url_df['Token'].isin([token]).any().any():
+if token == '':
+    pass
+elif token_url_df['Token'].isin([token]).any().any():
+    st.write('Click on the servey link:')
     st.write(list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0])
 else:
     st.write('Not a valid token')
