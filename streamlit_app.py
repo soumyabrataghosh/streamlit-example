@@ -15,16 +15,18 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
+url_dict = {
+    'token1':'https://google.com',
+    'token2':'https://yahoo.com'
+}
+
 token = st.text_input('TOKEN', '')
 if token in url_dict:
     st.write('TOKEN:', url_dict[token])
 else:
     st.write('Not a valid token')
 
-url_dict = {
-    'token1':'https://google.com',
-    'token2':'https://yahoo.com'
-}
+
 
 
             
