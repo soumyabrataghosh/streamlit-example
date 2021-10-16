@@ -16,9 +16,9 @@ token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT
 token = st.text_input('TOKEN', '',max_chars=8)
 
 if token_url_df['Token'].isin([token]).any().any():
-    st.button('SUBMIT', on_click="https://google.com")
-else:
     st.button('SUBMIT')
+else:
+    st.button('Submit')
 
 if token == '':
     pass
