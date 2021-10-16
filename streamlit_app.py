@@ -1,3 +1,4 @@
+!pip install bokeh
 from collections import namedtuple
 import altair as alt
 import math
