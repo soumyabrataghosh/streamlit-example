@@ -18,7 +18,7 @@ if st.button('Submit'):
     if token_url_df['Token'].isin([token]).any().any():
         url = list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0]
         st.write(url)
-        webbrowser.open(url)
+        webbrowser.open_new_tab(url)
 
 if token == '':
     pass
