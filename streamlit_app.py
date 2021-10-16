@@ -16,7 +16,8 @@ token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT
 token = st.text_input('TOKEN', '',max_chars=8)
 
 if token_url_df['Token'].isin([token]).any().any():
-    st.button('SUBMIT')
+    url = list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0]
+    st.write("<a href='"+str(url)+"'> Submit </a>")
 else:
     st.button('Submit')
 
