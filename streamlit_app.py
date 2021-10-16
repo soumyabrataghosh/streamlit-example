@@ -19,7 +19,8 @@ if st.button('SUBMIT'):
     if token_url_df['Token'].isin([token]).any().any():
         url = list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0]
         #js = "window.open('https://www.streamlit.io/')"  # New tab or window
-        js = "window.location.href = '"+str(url)+"'"  # Current tab
+        #js = "window.location.href = '"+str(url)+"'"  # Current tab
+        js = "window.open('"+str(url)+"')"  # Current tab
         html = '<img src onerror="{}">'.format(js)
         div = Div(text=html)
         st.bokeh_chart(div)
