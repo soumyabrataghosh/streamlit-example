@@ -3,6 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+import webbrowser
 
 """
 # Welcome to Lustro22 Servey!
@@ -13,7 +14,11 @@ import streamlit as st
 token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT51_uvt-sBRfDBdrWJCiCTspKxEtZTihm3RPb1YqtErzjSHbd1Sz0UZChsefSW1lD-z4Q66M4275/pub?output=csv')
 
 token = st.text_input('TOKEN', '',max_chars=8)
-st.button('Submit')
+if st.button('Submit'):
+    if token_url_df['Token'].isin([token]).any().any():
+        url = list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0]
+        webbrowser.open(url)
+
 if token == '':
     pass
 elif token_url_df['Token'].isin([token]).any().any():
