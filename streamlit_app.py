@@ -3,7 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-from bokeh.models.widgets import Div
+from django.shortcuts import redirect
 
 """
 # Welcome to Lustro22 Servey!
@@ -17,7 +17,7 @@ token = st.text_input('TOKEN', '',max_chars=8)
 
 if token_url_df['Token'].isin([token]).any().any():
     url = list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0]
-    st.markdown("<a href='"+str(url)+"'> Submit </a>")
+    st.button('Submit', on_click=redirect(url))
 else:
     st.button('Submit')
 
