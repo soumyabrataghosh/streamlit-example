@@ -24,14 +24,12 @@ if st.button('SUBMIT'):
         div = Div(text=html)
         st.bokeh_chart(div)
 
-
 if token == '':
     pass
 elif token_url_df['Token'].isin([token]).any().any():
-    st.write('Go to your servey:')
-    st.write(list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0])
+    pass
 else:
-    st.write('Not a valid token')
+    st.error('Not a valid token')
 
     
 footer="""<style>
