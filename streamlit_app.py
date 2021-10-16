@@ -12,7 +12,7 @@ import streamlit as st
 
 token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT51_uvt-sBRfDBdrWJCiCTspKxEtZTihm3RPb1YqtErzjSHbd1Sz0UZChsefSW1lD-z4Q66M4275/pub?output=csv')
 
-token = st.text_input('TOKEN', '')
+token = st.text_input('TOKEN', '',max_chars=8)
 st.button('Submit')
 if token == '':
     pass
