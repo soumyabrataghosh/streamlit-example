@@ -3,7 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-import webbrowser
+from bokeh.models.widgets import Div
 
 """
 # Welcome to Lustro22 Servey!
@@ -14,11 +14,16 @@ import webbrowser
 token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT51_uvt-sBRfDBdrWJCiCTspKxEtZTihm3RPb1YqtErzjSHbd1Sz0UZChsefSW1lD-z4Q66M4275/pub?output=csv')
 
 token = st.text_input('TOKEN', '',max_chars=8)
-if st.button('Submit'):
+
+if st.button('SUBMIT'):
     if token_url_df['Token'].isin([token]).any().any():
         url = list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0]
-        st.write(url)
-        webbrowser.open_new(url)
+        #js = "window.open('https://www.streamlit.io/')"  # New tab or window
+        js = "window.location.href = '"+str(url)+"'"  # Current tab
+        html = '<img src onerror="{}">'.format(js)
+        div = Div(text=html)
+        st.bokeh_chart(div)
+
 
 if token == '':
     pass
