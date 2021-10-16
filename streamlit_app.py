@@ -1,4 +1,4 @@
-!pip install bokeh
+from bokeh.plotting import figure
 from collections import namedtuple
 import altair as alt
 import math
