@@ -47,7 +47,7 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed with ❤ by Soumyabrata Ghosh</p>
+<p>app by: \soumya/</p>
 </div>
 """
 st.markdown(footer,unsafe_allow_html=True)
