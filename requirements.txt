@@ -1,4 +1,4 @@
 altair
 pandas
 streamlit
-bokeh
+django
