@@ -15,15 +15,10 @@ token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT
 
 token = st.text_input('TOKEN', '',max_chars=8)
 
-if st.button('SUBMIT'):
-    if token_url_df['Token'].isin([token]).any().any():
-        url = list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0]
-        #js = "window.open('https://www.streamlit.io/')"  # New tab or window
-        #js = "window.location.href = '"+str(url)+"'"  # Current tab
-        js = "window.open('"+str(url)+"')"  # Current tab
-        html = '<img src onerror="{}">'.format(js)
-        div = Div(text=html)
-        st.bokeh_chart(div)
+if token_url_df['Token'].isin([token]).any().any():
+    st.button('SUBMIT', on_click="https://google.com")
+else:
+    st.button('SUBMIT')
 
 if token == '':
     pass
