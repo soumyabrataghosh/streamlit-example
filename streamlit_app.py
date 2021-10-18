@@ -12,7 +12,7 @@ def check_token(token_url_df_in,token_in):
         url = list(token_url_df_in.loc[token_url_df['Token']==token_in]['Invite Link'])[0]
         st.markdown("<div class='st-ae st-af st-ag st-ah st-ai st-aj st-ak st-cm st-am st-b8 st-ao st-ap st-aq st-ar st-as st-at st-cn st-av st-aw st-ax st-ay st-az st-b9 st-b1 st-b2 st-b3 st-b4 st-b5 st-co'> <a href='"+str(url)+"'> Go to your survey </a> </div>", unsafe_allow_html=True)
     else:
-        st.error('Not a valid token')
+        st.sucess('Not a valid token')
 
 
 token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT51_uvt-sBRfDBdrWJCiCTspKxEtZTihm3RPb1YqtErzjSHbd1Sz0UZChsefSW1lD-z4Q66M4275/pub?output=csv')
