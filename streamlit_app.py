@@ -5,21 +5,19 @@ import streamlit as st
 
 ### Enter your token
 """
+def print_hi:
+    st.error('Hello')
 
 token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT51_uvt-sBRfDBdrWJCiCTspKxEtZTihm3RPb1YqtErzjSHbd1Sz0UZChsefSW1lD-z4Q66M4275/pub?output=csv')
 
 token = st.text_input('TOKEN', '',max_chars=8)
-
-if token_url_df['Token'].isin([token]).any().any():
-    url = list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0]
-    st.markdown("<a href='"+str(url)+"'> Submit </a>",unsafe_allow_html=True)
-else:
-    st.button('Submit')
+st.button('Submit', on_click=print_hi())
 
 if token == '':
     pass
 elif token_url_df['Token'].isin([token]).any().any():
-    pass
+    url = list(token_url_df.loc[token_url_df['Token']==token]['Invite Link'])[0]
+    st.markdown("<a href='"+str(url)+"'> Go to your survey </a>",unsafe_allow_html=True)
 else:
     st.error('Not a valid token')
 
