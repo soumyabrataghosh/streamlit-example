@@ -5,7 +5,7 @@ import streamlit as st
 
 ### Enter your token
 """
-def print_hi:
+def print_hi():
     st.error('Hello')
 
 token_url_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTjT51_uvt-sBRfDBdrWJCiCTspKxEtZTihm3RPb1YqtErzjSHbd1Sz0UZChsefSW1lD-z4Q66M4275/pub?output=csv')
