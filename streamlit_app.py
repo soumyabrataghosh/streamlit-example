@@ -10,7 +10,7 @@ def check_token(token_url_df_in,token_in):
         st.error('Enter a token')
     elif token_url_df_in['Token'].isin([token_in]).any().any():
         url = list(token_url_df_in.loc[token_url_df['Token']==token_in]['Invite Link'])[0]
-        st.success("<a href='"+str(url)+"'> Go to your survey </a>",unsafe_allow_html=True)
+        st.success("<a href='"+str(url)+"'> Go to your survey </a>")
     else:
         st.error('Not a valid token')
 
