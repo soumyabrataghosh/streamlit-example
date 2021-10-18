@@ -10,7 +10,7 @@ def check_token(token_url_df_in,token_in):
         st.error('Enter a token')
     elif token_url_df_in['Token'].isin([token_in]).any().any():
         url = list(token_url_df_in.loc[token_url_df['Token']==token_in]['Invite Link'])[0]
-        st.markdown("<div role='alert' data-baseweb='notification' class='st-ae st-af st-ag st-ah st-ai st-aj st-ak st-cm st-am st-b8 st-ao st-ap st-aq st-ar st-as st-at st-cn st-av st-aw st-ax st-ay st-az st-b9 st-b1 st-b2 st-b3 st-b4 st-b5 st-co'> <a href='"+str(url)+"'> Go to your survey </a> </div>", unsafe_allow_html=True)
+        st.markdown("<div class="stAlert"><div role='alert' data-baseweb='notification' class='st-ae st-af st-ag st-ah st-ai st-aj st-ak st-cm st-am st-b8 st-ao st-ap st-aq st-ar st-as st-at st-cn st-av st-aw st-ax st-ay st-az st-b9 st-b1 st-b2 st-b3 st-b4 st-b5 st-co'> <a href='"+str(url)+"'> Go to your survey </a> </div></div>", unsafe_allow_html=True)
     else:
         st.success('Not a valid token')
 
